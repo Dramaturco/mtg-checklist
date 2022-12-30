@@ -1,6 +1,24 @@
-# Getting Started with Create React App
+# MTG-Checklist
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+This react app fetches cards from a selected MTG set and displays them as a printable checklist.
+It is currently not being hosted anywhere.
+It is intended for collectors to generate checklists for the sets they wish to collect.
+Cards are fetched from scryfall.
+
+## Planned features
+
+Fetch the list of sets from scryfall and fill the dropdown menu with it.
+Print the list of cards from the selected set in a grid of x cards per block.
+X is a selectable number and represents the number of slots your binder page has.
+That way you can see which slot each card goes into.
+Add or remove data fields like casting cost, artist, etc. to your grid.
+Choose a condition for each card before printing.
+
+## Completed features
+
+Fetch cards for revised edition from scryfall.
 
 ## Available Scripts
 
