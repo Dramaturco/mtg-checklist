@@ -35,7 +35,7 @@ function App() {
         cards.push(...moreCards)
 
       }
-      console.log(cards)
+
       return cards
     }
     fetchData()
