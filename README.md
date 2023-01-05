@@ -9,16 +9,17 @@ Cards are fetched from scryfall.
 
 ## Planned features
 
-Fetch the list of sets from scryfall and fill the dropdown menu with it.
 Print the list of cards from the selected set in a grid of x cards per block.
 X is a selectable number and represents the number of slots your binder page has.
 That way you can see which slot each card goes into.
 Add or remove data fields like casting cost, artist, etc. to your grid.
 Choose a condition for each card before printing.
+Choose the language for the card names.
 
 ## Completed features
 
-Fetch cards for revised edition from scryfall.
+Fetch the list of sets from scryfall and fill the dropdown menu with it.
+Display the cards from the set in a list
 
 ## Available Scripts
 

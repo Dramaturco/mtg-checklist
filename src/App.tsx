@@ -1,54 +1,87 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import "./App.css";
-import Card from "./Card";
+import Card from "./components/Card";
+import SetSelector from "./components/SetSelector";
 
 const scryfallApi = "https://api.scryfall.com";
-type MTGSet = { name: string; code: string };
-type MTGCard = { name: string, id: string };
+export type MTGSet = { name: string; code: string };
+type MTGCard = { name: string; id: string };
 
 function App() {
-  const [sets, setSets] = useState([{ name: "Revised Edition", code: "3ed" }]);
-  const [selectedSetIndex, setSelectedSetIndex] = useState(0);
+  const [sets, setSets] = useState([] as MTGSet[]);
+  const [selectedSet, setSelectedSet] = useState({} as MTGSet);
   const [cardData, setCardData] = useState([] as MTGCard[]);
 
+  const fetchSets = useCallback(async function fetchSets() {
+    const url = scryfallApi + "/sets";
+    const res = await fetch(url);
+    const json = await res.json();
+    const sets = json.data.map((set: any) => ({
+      name: set.name,
+      code: set.code,
+    }));
+
+    return sets;
+  },[]);
+  async function fetchCardsForSelectedSet() {
+    const url = scryfallApi + "/sets/" + selectedSet.code;
+    const res = await fetch(url);
+    const setData = await res.json();
+    const cards = await fetchCards(setData.search_uri);
+
+    setCardData(cards);
+  }
+  async function fetchCards(url: string): Promise<MTGCard[]> {
+    const cardsUrl = new URL(url);
+    cardsUrl.searchParams.set("include_variations", "false");
+    let res = await fetch(cardsUrl);
+    let cardsData = await res.json();
+    let cards = cardsData.data;
+
+    while (cardsData.has_more) {
+      const res = await fetch(cardsData.next_page);
+      cardsData = await res.json();
+      const moreCards = cardsData.data;
+
+      cards.push(...moreCards);
+    }
+    return cards;
+  }
+
   useEffect(() => {
-    async function fetchData() {
-      const url = scryfallApi + "/sets/" + sets[selectedSetIndex].code;
-      const res = await fetch(url);
-      const setData = await res.json()
-      const cards = await fetchCards(setData.search_uri)
+    let setsLoaded = true;
 
-      setCardData(cards)
-    }
-    async function fetchCards(url: string): Promise<MTGCard[]>{
-      const cardsUrl = new URL(url)
-      cardsUrl.searchParams.set("include_variations", "false");
-      let res = await fetch(cardsUrl)
-      let cardsData = await res.json()
-      let cards = cardsData.data
-
-      while(cardsData.has_more){
-        const res = await fetch(cardsData.next_page)
-        cardsData = await res.json()
-        const moreCards = cardsData.data
-
-        cards.push(...moreCards)
-
+    const refetchSets = async () => {
+      const fetchedSets = await fetchSets();
+      if(setsLoaded) {
+        setSets(fetchedSets)
       }
-      console.log(cards)
-      return cards
     }
-    fetchData()
-  }, []);
+    refetchSets();
+
+    return () => {
+
+    }
+  }, [fetchSets]);
+
+  useEffect(() => {
+    fetchCardsForSelectedSet();
+  },[selectedSet])
+
+  function handleSetSelect(setName: string): void {
+    const set = sets.find((set: MTGSet) => set.name === setName )!
+    setSelectedSet(set);
+  }
 
   return (
     <div className="App">
-      <select>
-        {sets.map((set) => (
-          <option key={set.code}>{set.name}</option>
-        ))}
-      </select>
-      {cardData.map(card => <Card name={card.name} key={card.id}/>)}
+      <SetSelector
+        setList={sets}
+        selectSet={handleSetSelect}
+      />
+      {cardData.map((card) => (
+        <Card name={card.name} key={card.id} />
+      ))}
     </div>
   );
 }
