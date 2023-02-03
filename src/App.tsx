@@ -83,7 +83,7 @@ function App() {
             setList={sets}
             selectSet={handleSetSelect}
           />
-        <div className="container mx-auto flex justify-center">          
+        <div className="container mx-auto flex justify-center">
         <ConfigurationSelector />
         </div>
         {cardData.map((card) => (

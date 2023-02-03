@@ -43,6 +43,7 @@ export default function NumberInput({
           value={value}
           onBlur={(e) => handler(validateValue(Number(e.target.value)))}
           onChange={(e) => handler(validateValue(Number(e.target.value)))}
+          id={label}
         />
         <button
           className="w-12 border-b font-bold text-teal-500 hover:text-teal-400 active:text-teal-600"
@@ -51,7 +52,7 @@ export default function NumberInput({
           {INCREMENT_LABEL}
         </button>
       </div>
-      {label && <label className="text-xs text-teal-500 pb-4">{label}</label>}
+      {label && <label className="text-xs text-teal-500 pb-4" htmlFor={label}>{label}</label>}
     </div>
   );
 }
