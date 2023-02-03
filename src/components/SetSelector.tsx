@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { MTGSet } from "../App";
+import { MTGSet } from "../@types/MTGSet";
 
 export default function SetSelector(props: any) {
   const [filter, setFilter] = useState("");
@@ -8,7 +8,7 @@ export default function SetSelector(props: any) {
   const filterChangeFunction = (value: string) => {
     setFilter(value);
     setDisplayedSets(
-      props.setList.filter((set: MTGSet) => set.name.includes(filter))
+      props.setList.filter((set: MTGSet) => set.name.toLowerCase().includes(filter))
     );
   };
   return (

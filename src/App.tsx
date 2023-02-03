@@ -2,15 +2,16 @@ import React, { useState, useEffect, useCallback } from "react";
 import "./App.css";
 import Card from "./components/Card";
 import SetSelector from "./components/SetSelector";
+import ConfigurationContext from "./Context/ConfigurationContext";
+import ConfigurationSelector from "./components/ConfigurationSelector";
+import { MTGSet, MTGCard } from "./@types/MTGSet";
 
 const scryfallApi = "https://api.scryfall.com";
-export type MTGSet = { name: string; code: string };
-type MTGCard = { name: string; id: string };
-
 function App() {
   const [sets, setSets] = useState([] as MTGSet[]);
-  const [selectedSet, setSelectedSet] = useState({} as MTGSet);
+  const [selectedSet, setSelectedSet] = useState({name: "", code: ""});
   const [cardData, setCardData] = useState([] as MTGCard[]);
+  const [configuration, setConfiguration] = useState({slotsPerPage: 9, cardCondition: false})
 
   const fetchSets = useCallback(async function fetchSets() {
     const url = scryfallApi + "/sets";
@@ -65,7 +66,9 @@ function App() {
   }, [fetchSets]);
 
   useEffect(() => {
-    fetchCardsForSelectedSet();
+    if(selectedSet.code !== ""){
+      fetchCardsForSelectedSet();
+    }
   },[selectedSet])
 
   function handleSetSelect(setName: string): void {
@@ -75,13 +78,18 @@ function App() {
 
   return (
     <div className="App">
-      <SetSelector
-        setList={sets}
-        selectSet={handleSetSelect}
-      />
-      {cardData.map((card) => (
-        <Card name={card.name} key={card.id} />
-      ))}
+      <ConfigurationContext.Provider value={{configuration, setConfiguration}}>
+          <SetSelector
+            setList={sets}
+            selectSet={handleSetSelect}
+          />
+        <div className="container mx-auto flex justify-center">          
+        <ConfigurationSelector />
+        </div>
+        {cardData.map((card) => (
+          <Card name={card.name} key={card.id} />
+        ))}
+      </ConfigurationContext.Provider>
     </div>
   );
 }

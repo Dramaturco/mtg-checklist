@@ -24,6 +24,14 @@
   color: white;
 }
 
+.spin-button-none {
+  -moz-appearance: textfield;
+}
+.spin-button-none::-webkit-outer-spin-button,
+.spin-button-none::-webkit-inner-spin-button {
+  appearance: none;
+}
+
 .App-link {
   color: #61dafb;
 }
