@@ -5,8 +5,11 @@ import SetSelector from "./components/SetSelector";
 import ConfigurationContext from "./Context/ConfigurationContext";
 import ConfigurationSelector from "./components/ConfigurationSelector";
 import { MTGSet, MTGCard } from "./@types/MTGSet";
+import { testCardData } from "./tests/testData";
+import CardList from "./components/CardList";
 
 const scryfallApi = "https://api.scryfall.com";
+
 function App() {
   const [sets, setSets] = useState([] as MTGSet[]);
   const [selectedSet, setSelectedSet] = useState({name: "", code: ""});
@@ -46,6 +49,7 @@ function App() {
 
       cards.push(...moreCards);
     }
+
     return cards;
   }
 
@@ -86,9 +90,7 @@ function App() {
         <div className="container mx-auto flex justify-center">
         <ConfigurationSelector />
         </div>
-        {cardData.map((card) => (
-          <Card name={card.name} key={card.id} />
-        ))}
+        <CardList cards={testCardData}/>
       </ConfigurationContext.Provider>
     </div>
   );
