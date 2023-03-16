@@ -1,16 +1,42 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { MTGSet } from "../@types/MTGSet";
 
-export default function SetSelector(props: any) {
-  const [filter, setFilter] = useState("");
-  const [displayedSets, setDisplayedSets] = useState(props.setList);
+const scryfallApi = "https://api.scryfall.com";
 
+export default function SetSelector(props: any) {
+  const [filter, setFilter] = useState<string>("");
+  const [allSets, setAllSets] = useState<MTGSet[]|null>(null);
+  const [displayedSets, setDisplayedSets] = useState<MTGSet[]>([]);
+
+  async function fetchSets() {
+    const url = scryfallApi + "/sets";
+    const res = await fetch(url);
+    const json = await res.json();
+    const sets = json.data.map((set: any) => ({
+      name: set.name,
+      code: set.code,
+    }));
+
+    setAllSets(sets);
+  }
+
+  useEffect(() => {
+    if(!allSets){
+      fetchSets()
+    }
+  }, [])
   const filterChangeFunction = (value: string) => {
     setFilter(value);
-    setDisplayedSets(
-      props.setList.filter((set: MTGSet) => set.name.toLowerCase().includes(filter))
-    );
+    if(allSets){
+      setDisplayedSets(
+        allSets.filter((set: MTGSet) => set.name.toLowerCase().includes(filter.toLowerCase()))
+      );
+    }
   };
+  const selectSet = (setName: string) => {
+    const selectedSet = displayedSets.find(set => set.name === setName)
+    props.selectSet(selectedSet)
+  }
   return (
     <div>
       <input
@@ -24,10 +50,9 @@ export default function SetSelector(props: any) {
           filterChangeFunction(e.target.value)
         }
         className="border-black border p-2 rounded-sm"
-        onKeyDown={(e) => e.key === "Enter" && props.selectSet(filter)}
+        onKeyDown={(e) => e.key === "Enter" && selectSet(filter)}
       />
       <datalist
-        className="bg-green-300"
         id="sets"
       >
         {displayedSets.map((set: MTGSet) => (
