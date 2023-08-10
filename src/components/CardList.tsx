@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { MTGCard, MTGSet } from "../@types/MTGSet";
+import { MTGCard, MTGColorType, MTGSet, MTGCardBlock } from "../@types/MTGSet";
 import Card from "./Card";
 
 const scryfallApi = "https://api.scryfall.com";
@@ -7,13 +7,44 @@ const scryfallApi = "https://api.scryfall.com";
 type CardListProps = {
   set: MTGSet
 };
-export function splitListIntoBlocks(cards: MTGCard[], blocksize: number){
+export function splitListIntoBlocks(cards: MTGCard[], blocksize: number): MTGCardBlock[]{
+  return cards.reduce((splitList, card, index) => {
+    const chunkIndex = Math.floor(index/blocksize)
+
+    if(!splitList[chunkIndex]) {
+      splitList[chunkIndex] = {colorTypes: [], cards: []}
+    }
+
+    splitList[chunkIndex].cards.push(card)
+
+    return splitList
+  }, [] as MTGCardBlock[])
 }
-export function getColorType(rawCard: any): string {
-  return ""
+export function getColorType(rawCard: any): MTGColorType {
+  function checkTypeLine(typeLine: string): string | undefined {
+    const types = ["Artifact", "Land"]
+    return types.find(type => typeLine.includes(type))
+  }
+  const typeLine = checkTypeLine(rawCard.type_line)
+  if(typeLine){
+    return typeLine as MTGColorType
+  }
+  if(rawCard.colors.length > 1){
+    return "Multicolor"
+  }
+  switch(rawCard.colors[0]){
+    case "R": return "Red"
+    case "W": return "White"
+    case "U": return "Blue"
+    case "B": return "Black"
+    case "G": return "Green"
+  }
+
+  return "Red"
 }
 export default function CardList({ set }: CardListProps) {
   const [cards, setCards] = useState<MTGCard[]|null>(null)
+  const [blocks, setBlocks] = useState<MTGCardBlock[]|null>(null)
 
   async function fetchCards(url: string): Promise<MTGCard[]> {
     const cardsUrl = new URL(url);
@@ -37,10 +68,10 @@ export default function CardList({ set }: CardListProps) {
     const url = scryfallApi + "/sets/" + set.code;
     const res = await fetch(url);
     const setData = await res.json();
-    console.log(setData)
     const cards = await fetchCards(setData.search_uri);
+    const cardsWithColorType = cards.map(card => ({...card, colorType: getColorType(card)}));
 
-    setCards(cards);
+    setCards(cardsWithColorType);
   }
 
   useEffect(() => {
@@ -51,7 +82,7 @@ export default function CardList({ set }: CardListProps) {
 
   return (
     <div>
-      {cards && cards.map((card: MTGCard) => (
+      {cards && cards.map((card) => (
         <Card name={card.name} key={card.id} />
       ))}
     </div>
