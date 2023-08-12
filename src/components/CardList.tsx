@@ -1,6 +1,9 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import { MTGCard, MTGColorType, MTGSet, MTGCardBlock } from "../@types/MTGSet";
 import Card from "./Card";
+import ConfigurationContext from "../Context/ConfigurationContext";
+import { ConfigurationContextType } from "../@types/Configuration";
+import Page from "./Page";
 
 const scryfallApi = "https://api.scryfall.com";
 
@@ -45,6 +48,7 @@ export function getColorType(rawCard: any): MTGColorType {
 export default function CardList({ set }: CardListProps) {
   const [cards, setCards] = useState<MTGCard[]|null>(null)
   const [blocks, setBlocks] = useState<MTGCardBlock[]|null>(null)
+  const {configuration, setConfiguration} = useContext(ConfigurationContext) as ConfigurationContextType;
 
   async function fetchCards(url: string): Promise<MTGCard[]> {
     const cardsUrl = new URL(url);
@@ -79,11 +83,17 @@ export default function CardList({ set }: CardListProps) {
       fetchCardsForSelectedSet()
     }
   },[])
+  useEffect(() => {
+    if(cards){
+      const blocks = splitListIntoBlocks(cards, configuration.slotsPerPage)
+      setBlocks(blocks)
+    }
+  }, [cards, configuration.slotsPerPage])
 
   return (
     <div>
-      {cards && cards.map((card, index) => (
-        <Card name={card.name} key={card.id} colorType={card.colorType} dark={index%2===0}/>
+      {blocks && blocks.map((block) => (
+        <Page block={block}/>
       ))}
     </div>
   );
