@@ -82,8 +82,8 @@ export default function CardList({ set }: CardListProps) {
 
   return (
     <div>
-      {cards && cards.map((card) => (
-        <Card name={card.name} key={card.id} />
+      {cards && cards.map((card, index) => (
+        <Card name={card.name} key={card.id} colorType={card.colorType} dark={index%2===0}/>
       ))}
     </div>
   );
