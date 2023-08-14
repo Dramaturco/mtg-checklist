@@ -48,7 +48,7 @@ export function getColorType(rawCard: any): MTGColorType {
 export default function CardList({ set }: CardListProps) {
   const [cards, setCards] = useState<MTGCard[]|null>(null)
   const [blocks, setBlocks] = useState<MTGCardBlock[]|null>(null)
-  const {configuration, setConfiguration} = useContext(ConfigurationContext) as ConfigurationContextType;
+  const {configuration} = useContext(ConfigurationContext) as ConfigurationContextType;
 
   async function fetchCards(url: string): Promise<MTGCard[]> {
     const cardsUrl = new URL(url);
@@ -91,7 +91,7 @@ export default function CardList({ set }: CardListProps) {
   }, [cards, configuration.slotsPerPage])
 
   return (
-    <div>
+    <div className="grid grid-cols-3 w-4/5 m-auto">
       {blocks && blocks.map((block) => (
         <Page block={block}/>
       ))}

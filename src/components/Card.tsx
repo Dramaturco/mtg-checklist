@@ -1,4 +1,7 @@
-import { useEffect, useState } from "react"
+import { useEffect, useState, useContext } from "react"
+import ConfigurationContext from "../Context/ConfigurationContext"
+import { Config } from "@testing-library/react"
+import { ConfigurationContextType } from "../@types/Configuration"
 
 type CardProps = {
   name: string,
@@ -29,12 +32,19 @@ function mapColorTypeToCSSColor(colortype: string): string {
 }
 export default function Card({name, colorType, dark}: CardProps){
   const [background, setBackground] = useState("bg-white")
+  const {configuration} = useContext(ConfigurationContext) as ConfigurationContextType
+
+
   useEffect(() => {
-    const cssColor = mapColorTypeToCSSColor(colorType + (dark ? " dark" : " light"))
-    setBackground(cssColor)
-  }, [colorType])
+    if(configuration.showColors){
+      const cssColor = mapColorTypeToCSSColor(colorType + " light")
+      setBackground(cssColor)
+    } else {
+      setBackground("bg-white")
+    }
+  }, [colorType, configuration])
   return(
-  <div className={`${background} px-2 py-1 border-black border-b-0 border w-1/3 m-auto`}>
+  <div className={`${background} px-2 py-2 border-black border-b-0 border w-1/3 m-auto h-1/3`}>
     <p>{name}</p>
   </div>)
 }
