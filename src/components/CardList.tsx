@@ -1,6 +1,5 @@
 import { useEffect, useState, useContext } from "react";
 import { MTGCard, MTGColorType, MTGSet, MTGCardBlock } from "../@types/MTGSet";
-import Card from "./Card";
 import ConfigurationContext from "../Context/ConfigurationContext";
 import { ConfigurationContextType } from "../@types/Configuration";
 import Page from "./Page";

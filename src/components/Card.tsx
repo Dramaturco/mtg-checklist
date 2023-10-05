@@ -1,6 +1,5 @@
 import { useEffect, useState, useContext } from "react"
 import ConfigurationContext from "../Context/ConfigurationContext"
-import { Config } from "@testing-library/react"
 import { ConfigurationContextType } from "../@types/Configuration"
 
 type CardProps = {
