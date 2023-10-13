@@ -27,10 +27,7 @@ export function getColorType(rawCard: any): MTGColorType {
     const types = ["Artifact", "Land"]
     return types.find(type => typeLine.includes(type))
   }
-  const typeLine = checkTypeLine(rawCard.type_line)
-  if(typeLine){
-    return typeLine as MTGColorType
-  }
+
   if(rawCard.colors.length > 1){
     return "Multicolor"
   }
@@ -41,7 +38,10 @@ export function getColorType(rawCard: any): MTGColorType {
     case "B": return "Black"
     case "G": return "Green"
   }
-
+  const typeLine = checkTypeLine(rawCard.type_line)
+  if(typeLine){
+    return typeLine as MTGColorType
+  }
   return "Red"
 }
 export default function CardList({ set }: CardListProps) {

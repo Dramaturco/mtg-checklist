@@ -2377,4 +2377,764 @@ export const testCardData = [
         "https://www.cardhoarder.com/cards?affiliate_id=scryfall&data%5Bsearch%5D=Green+Ward&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall",
     },
   },
+  {
+    object: "card",
+    id: "fb977f5b-2202-43c1-a8c0-7fba8c093fa2",
+    oracle_id: "fc17d8dd-887f-405e-a195-777aa3da36f5",
+    multiverse_ids: [89000],
+    mtgo_id: 23374,
+    mtgo_foil_id: 23375,
+    tcgplayer_id: 13204,
+    cardmarket_id: 13307,
+    name: "Bloodbond March",
+    lang: "en",
+    released_at: "2005-10-07",
+    uri: "https://api.scryfall.com/cards/fb977f5b-2202-43c1-a8c0-7fba8c093fa2",
+    scryfall_uri:
+      "https://scryfall.com/card/rav/192/bloodbond-march?utm_source=api",
+    layout: "normal",
+    highres_image: true,
+    image_status: "highres_scan",
+    image_uris: {
+      small:
+        "https://cards.scryfall.io/small/front/f/b/fb977f5b-2202-43c1-a8c0-7fba8c093fa2.jpg?1598916754",
+      normal:
+        "https://cards.scryfall.io/normal/front/f/b/fb977f5b-2202-43c1-a8c0-7fba8c093fa2.jpg?1598916754",
+      large:
+        "https://cards.scryfall.io/large/front/f/b/fb977f5b-2202-43c1-a8c0-7fba8c093fa2.jpg?1598916754",
+      png: "https://cards.scryfall.io/png/front/f/b/fb977f5b-2202-43c1-a8c0-7fba8c093fa2.png?1598916754",
+      art_crop:
+        "https://cards.scryfall.io/art_crop/front/f/b/fb977f5b-2202-43c1-a8c0-7fba8c093fa2.jpg?1598916754",
+      border_crop:
+        "https://cards.scryfall.io/border_crop/front/f/b/fb977f5b-2202-43c1-a8c0-7fba8c093fa2.jpg?1598916754",
+    },
+    mana_cost: "{2}{B}{G}",
+    cmc: 4.0,
+    type_line: "Enchantment",
+    oracle_text:
+      "Whenever a player casts a creature spell, each player returns all cards with the same name as that spell from their graveyard to the battlefield.",
+    colors: ["B", "G"],
+    color_identity: ["B", "G"],
+    keywords: [],
+    legalities: {
+      standard: "not_legal",
+      future: "not_legal",
+      historic: "not_legal",
+      gladiator: "not_legal",
+      pioneer: "not_legal",
+      explorer: "not_legal",
+      modern: "legal",
+      legacy: "legal",
+      pauper: "not_legal",
+      vintage: "legal",
+      penny: "legal",
+      commander: "legal",
+      oathbreaker: "legal",
+      brawl: "not_legal",
+      historicbrawl: "not_legal",
+      alchemy: "not_legal",
+      paupercommander: "not_legal",
+      duel: "legal",
+      oldschool: "not_legal",
+      premodern: "not_legal",
+      predh: "legal",
+    },
+    games: ["paper", "mtgo"],
+    reserved: false,
+    foil: true,
+    nonfoil: true,
+    finishes: ["nonfoil", "foil"],
+    oversized: false,
+    promo: false,
+    reprint: false,
+    variation: false,
+    set_id: "15fccbe8-2825-41ca-9d0a-67aebdf91c4a",
+    set: "rav",
+    set_name: "Ravnica: City of Guilds",
+    set_type: "expansion",
+    set_uri:
+      "https://api.scryfall.com/sets/15fccbe8-2825-41ca-9d0a-67aebdf91c4a",
+    set_search_uri:
+      "https://api.scryfall.com/cards/search?order=set&q=e%3Arav&unique=prints",
+    scryfall_set_uri: "https://scryfall.com/sets/rav?utm_source=api",
+    rulings_uri:
+      "https://api.scryfall.com/cards/fb977f5b-2202-43c1-a8c0-7fba8c093fa2/rulings",
+    prints_search_uri:
+      "https://api.scryfall.com/cards/search?order=released&q=oracleid%3Afc17d8dd-887f-405e-a195-777aa3da36f5&unique=prints",
+    collector_number: "192",
+    digital: false,
+    rarity: "rare",
+    watermark: "golgari",
+    flavor_text:
+      "The Golgari support a vast army because death never ends its soldiers' service.",
+    card_back_id: "0aeebaf5-8c7d-4636-9e82-8c27447861f7",
+    artist: "Jim Nelson",
+    artist_ids: ["aa9f64d1-29e1-4c82-877e-44c18183f40b"],
+    illustration_id: "5c658c28-32e9-4487-b241-8e70f38b8f2d",
+    border_color: "black",
+    frame: "2003",
+    full_art: false,
+    textless: false,
+    booster: true,
+    story_spotlight: false,
+    edhrec_rank: 11974,
+    penny_rank: 9809,
+    prices: {
+      usd: "0.80",
+      usd_foil: "6.68",
+      usd_etched: null,
+      eur: "0.29",
+      eur_foil: "1.72",
+      tix: "0.02",
+    },
+    related_uris: {
+      gatherer:
+        "https://gatherer.wizards.com/Pages/Card/Details.aspx?multiverseid=89000",
+      tcgplayer_infinite_articles:
+        "https://infinite.tcgplayer.com/search?contentMode=article&game=magic&partner=scryfall&q=Bloodbond+March&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+      tcgplayer_infinite_decks:
+        "https://infinite.tcgplayer.com/search?contentMode=deck&game=magic&partner=scryfall&q=Bloodbond+March&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+      edhrec: "https://edhrec.com/route/?cc=Bloodbond+March",
+    },
+    purchase_uris: {
+      tcgplayer:
+        "https://www.tcgplayer.com/product/13204?page=1&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+      cardmarket:
+        "https://www.cardmarket.com/en/Magic/Products/Search?referrer=scryfall&searchString=Bloodbond+March&utm_campaign=card_prices&utm_medium=text&utm_source=scryfall",
+      cardhoarder:
+        "https://www.cardhoarder.com/cards/23374?affiliate_id=scryfall&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall",
+    },
+  },
+  {
+    object: "card",
+    id: "69b822aa-4144-400a-b993-f146cbeed54f",
+    oracle_id: "1b6c67e5-5913-4db9-85d9-8dae57da02ee",
+    multiverse_ids: [87990],
+    mtgo_id: 23292,
+    mtgo_foil_id: 23293,
+    tcgplayer_id: 13252,
+    cardmarket_id: 13355,
+    name: "Dimir Guildmage",
+    lang: "en",
+    released_at: "2005-10-07",
+    uri: "https://api.scryfall.com/cards/69b822aa-4144-400a-b993-f146cbeed54f",
+    scryfall_uri:
+      "https://scryfall.com/card/rav/245/dimir-guildmage?utm_source=api",
+    layout: "normal",
+    highres_image: true,
+    image_status: "highres_scan",
+    image_uris: {
+      small:
+        "https://cards.scryfall.io/small/front/6/9/69b822aa-4144-400a-b993-f146cbeed54f.jpg?1598917730",
+      normal:
+        "https://cards.scryfall.io/normal/front/6/9/69b822aa-4144-400a-b993-f146cbeed54f.jpg?1598917730",
+      large:
+        "https://cards.scryfall.io/large/front/6/9/69b822aa-4144-400a-b993-f146cbeed54f.jpg?1598917730",
+      png: "https://cards.scryfall.io/png/front/6/9/69b822aa-4144-400a-b993-f146cbeed54f.png?1598917730",
+      art_crop:
+        "https://cards.scryfall.io/art_crop/front/6/9/69b822aa-4144-400a-b993-f146cbeed54f.jpg?1598917730",
+      border_crop:
+        "https://cards.scryfall.io/border_crop/front/6/9/69b822aa-4144-400a-b993-f146cbeed54f.jpg?1598917730",
+    },
+    mana_cost: "{U/B}{U/B}",
+    cmc: 2.0,
+    type_line: "Creature — Human Wizard",
+    oracle_text:
+      "({U/B} can be paid with either {U} or {B}.)\n{3}{U}: Target player draws a card. Activate only as a sorcery.\n{3}{B}: Target player discards a card. Activate only as a sorcery.",
+    power: "2",
+    toughness: "2",
+    colors: ["B", "U"],
+    color_identity: ["B", "U"],
+    keywords: [],
+    legalities: {
+      standard: "not_legal",
+      future: "not_legal",
+      historic: "not_legal",
+      gladiator: "not_legal",
+      pioneer: "not_legal",
+      explorer: "not_legal",
+      modern: "legal",
+      legacy: "legal",
+      pauper: "legal",
+      vintage: "legal",
+      penny: "legal",
+      commander: "legal",
+      oathbreaker: "legal",
+      brawl: "not_legal",
+      historicbrawl: "not_legal",
+      alchemy: "not_legal",
+      paupercommander: "legal",
+      duel: "legal",
+      oldschool: "not_legal",
+      premodern: "not_legal",
+      predh: "legal",
+    },
+    games: ["paper", "mtgo"],
+    reserved: false,
+    foil: true,
+    nonfoil: true,
+    finishes: ["nonfoil", "foil"],
+    oversized: false,
+    promo: false,
+    reprint: false,
+    variation: false,
+    set_id: "15fccbe8-2825-41ca-9d0a-67aebdf91c4a",
+    set: "rav",
+    set_name: "Ravnica: City of Guilds",
+    set_type: "expansion",
+    set_uri:
+      "https://api.scryfall.com/sets/15fccbe8-2825-41ca-9d0a-67aebdf91c4a",
+    set_search_uri:
+      "https://api.scryfall.com/cards/search?order=set&q=e%3Arav&unique=prints",
+    scryfall_set_uri: "https://scryfall.com/sets/rav?utm_source=api",
+    rulings_uri:
+      "https://api.scryfall.com/cards/69b822aa-4144-400a-b993-f146cbeed54f/rulings",
+    prints_search_uri:
+      "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A1b6c67e5-5913-4db9-85d9-8dae57da02ee&unique=prints",
+    collector_number: "245",
+    digital: false,
+    rarity: "uncommon",
+    watermark: "dimir",
+    card_back_id: "0aeebaf5-8c7d-4636-9e82-8c27447861f7",
+    artist: "Adam Rex",
+    artist_ids: ["445bd2fb-4a70-4599-87a4-83cf5979fc56"],
+    illustration_id: "ce5875d4-c0a2-49c0-a726-056f1f36ed1a",
+    border_color: "black",
+    frame: "2003",
+    full_art: false,
+    textless: false,
+    booster: true,
+    story_spotlight: false,
+    edhrec_rank: 16388,
+    penny_rank: 6290,
+    prices: {
+      usd: "0.17",
+      usd_foil: "0.48",
+      usd_etched: null,
+      eur: "0.10",
+      eur_foil: "0.14",
+      tix: "0.03",
+    },
+    related_uris: {
+      gatherer:
+        "https://gatherer.wizards.com/Pages/Card/Details.aspx?multiverseid=87990",
+      tcgplayer_infinite_articles:
+        "https://infinite.tcgplayer.com/search?contentMode=article&game=magic&partner=scryfall&q=Dimir+Guildmage&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+      tcgplayer_infinite_decks:
+        "https://infinite.tcgplayer.com/search?contentMode=deck&game=magic&partner=scryfall&q=Dimir+Guildmage&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+      edhrec: "https://edhrec.com/route/?cc=Dimir+Guildmage",
+    },
+    purchase_uris: {
+      tcgplayer:
+        "https://www.tcgplayer.com/product/13252?page=1&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+      cardmarket:
+        "https://www.cardmarket.com/en/Magic/Products/Search?referrer=scryfall&searchString=Dimir+Guildmage&utm_campaign=card_prices&utm_medium=text&utm_source=scryfall",
+      cardhoarder:
+        "https://www.cardhoarder.com/cards/23292?affiliate_id=scryfall&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall",
+    },
+  },
+  {
+    object: "card",
+    id: "b451783a-8824-4eeb-8fd6-c9290ce7ccdb",
+    oracle_id: "37688720-03de-4eca-a82d-a0afe8d58adc",
+    multiverse_ids: [578759],
+    mtgo_id: 103172,
+    tcgplayer_id: 282928,
+    cardmarket_id: 671768,
+    name: "Baleful Strix",
+    lang: "en",
+    released_at: "2022-09-09",
+    uri: "https://api.scryfall.com/cards/b451783a-8824-4eeb-8fd6-c9290ce7ccdb",
+    scryfall_uri:
+      "https://scryfall.com/card/dmc/143/baleful-strix?utm_source=api",
+    layout: "normal",
+    highres_image: true,
+    image_status: "highres_scan",
+    image_uris: {
+      small:
+        "https://cards.scryfall.io/small/front/b/4/b451783a-8824-4eeb-8fd6-c9290ce7ccdb.jpg?1673305459",
+      normal:
+        "https://cards.scryfall.io/normal/front/b/4/b451783a-8824-4eeb-8fd6-c9290ce7ccdb.jpg?1673305459",
+      large:
+        "https://cards.scryfall.io/large/front/b/4/b451783a-8824-4eeb-8fd6-c9290ce7ccdb.jpg?1673305459",
+      png: "https://cards.scryfall.io/png/front/b/4/b451783a-8824-4eeb-8fd6-c9290ce7ccdb.png?1673305459",
+      art_crop:
+        "https://cards.scryfall.io/art_crop/front/b/4/b451783a-8824-4eeb-8fd6-c9290ce7ccdb.jpg?1673305459",
+      border_crop:
+        "https://cards.scryfall.io/border_crop/front/b/4/b451783a-8824-4eeb-8fd6-c9290ce7ccdb.jpg?1673305459",
+    },
+    mana_cost: "{U}{B}",
+    cmc: 2,
+    type_line: "Artifact Creature — Bird",
+    oracle_text:
+      "Flying, deathtouch\nWhen Baleful Strix enters the battlefield, draw a card.",
+    power: "1",
+    toughness: "1",
+    colors: ["B", "U"],
+    color_identity: ["B", "U"],
+    keywords: ["Deathtouch", "Flying"],
+    legalities: {
+      standard: "not_legal",
+      future: "not_legal",
+      historic: "not_legal",
+      gladiator: "not_legal",
+      pioneer: "not_legal",
+      explorer: "not_legal",
+      modern: "not_legal",
+      legacy: "legal",
+      pauper: "not_legal",
+      vintage: "legal",
+      penny: "not_legal",
+      commander: "legal",
+      oathbreaker: "legal",
+      brawl: "not_legal",
+      historicbrawl: "not_legal",
+      alchemy: "not_legal",
+      paupercommander: "restricted",
+      duel: "legal",
+      oldschool: "not_legal",
+      premodern: "not_legal",
+      predh: "not_legal",
+    },
+    games: ["paper", "mtgo"],
+    reserved: false,
+    foil: false,
+    nonfoil: true,
+    finishes: ["nonfoil"],
+    oversized: false,
+    promo: false,
+    reprint: true,
+    variation: false,
+    set_id: "78076b27-f888-4723-b27c-44074accd261",
+    set: "dmc",
+    set_name: "Dominaria United Commander",
+    set_type: "commander",
+    set_uri:
+      "https://api.scryfall.com/sets/78076b27-f888-4723-b27c-44074accd261",
+    set_search_uri:
+      "https://api.scryfall.com/cards/search?order=set&q=e%3Admc&unique=prints",
+    scryfall_set_uri: "https://scryfall.com/sets/dmc?utm_source=api",
+    rulings_uri:
+      "https://api.scryfall.com/cards/b451783a-8824-4eeb-8fd6-c9290ce7ccdb/rulings",
+    prints_search_uri:
+      "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A37688720-03de-4eca-a82d-a0afe8d58adc&unique=prints",
+    collector_number: "143",
+    digital: false,
+    rarity: "rare",
+    flavor_text:
+      "Its beak rends flesh and bone, exposing the tender marrow of dream.",
+    card_back_id: "0aeebaf5-8c7d-4636-9e82-8c27447861f7",
+    artist: "Nils Hamm",
+    artist_ids: ["c540d1fc-1500-457f-93cf-d6069ee66546"],
+    illustration_id: "ae7b0c5c-5425-4806-a74e-728d4c2b8ad4",
+    border_color: "black",
+    frame: "2015",
+    security_stamp: "oval",
+    full_art: false,
+    textless: false,
+    booster: false,
+    story_spotlight: false,
+    edhrec_rank: 344,
+    preview: {
+      source: "The Command Zone",
+      source_uri: "https://www.youtube.com/watch?v=DliVsku3kJE&t=35m06s",
+      previewed_at: "2022-08-19",
+    },
+    prices: {
+      usd: "1.30",
+      usd_foil: null,
+      usd_etched: null,
+      eur: "2.45",
+      eur_foil: null,
+      tix: "1.38",
+    },
+    related_uris: {
+      gatherer:
+        "https://gatherer.wizards.com/Pages/Card/Details.aspx?multiverseid=578759",
+      tcgplayer_infinite_articles:
+        "https://infinite.tcgplayer.com/search?contentMode=article&game=magic&partner=scryfall&q=Baleful+Strix&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+      tcgplayer_infinite_decks:
+        "https://infinite.tcgplayer.com/search?contentMode=deck&game=magic&partner=scryfall&q=Baleful+Strix&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+      edhrec: "https://edhrec.com/route/?cc=Baleful+Strix",
+    },
+    purchase_uris: {
+      tcgplayer:
+        "https://www.tcgplayer.com/product/282928?page=1&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+      cardmarket:
+        "https://www.cardmarket.com/en/Magic/Products/Search?referrer=scryfall&searchString=Baleful+Strix&utm_campaign=card_prices&utm_medium=text&utm_source=scryfall",
+      cardhoarder:
+        "https://www.cardhoarder.com/cards/103172?affiliate_id=scryfall&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall",
+    },
+  },
+  {
+    "object": "card",
+    "id": "b12e5430-0e80-47dd-80ac-85728b656a24",
+    "oracle_id": "c718911c-c955-4eb9-9e16-be4bd49a4e4e",
+    "multiverse_ids": [
+      1385
+    ],
+    "tcgplayer_id": 1608,
+    "cardmarket_id": 5834,
+    "name": "Volcanic Island",
+    "lang": "en",
+    "released_at": "1994-04-01",
+    "uri": "https://api.scryfall.com/cards/b12e5430-0e80-47dd-80ac-85728b656a24",
+    "scryfall_uri": "https://scryfall.com/card/3ed/291/volcanic-island?utm_source=api",
+    "layout": "normal",
+    "highres_image": true,
+    "image_status": "highres_scan",
+    "image_uris": {
+      "small": "https://cards.scryfall.io/small/front/b/1/b12e5430-0e80-47dd-80ac-85728b656a24.jpg?1559596837",
+      "normal": "https://cards.scryfall.io/normal/front/b/1/b12e5430-0e80-47dd-80ac-85728b656a24.jpg?1559596837",
+      "large": "https://cards.scryfall.io/large/front/b/1/b12e5430-0e80-47dd-80ac-85728b656a24.jpg?1559596837",
+      "png": "https://cards.scryfall.io/png/front/b/1/b12e5430-0e80-47dd-80ac-85728b656a24.png?1559596837",
+      "art_crop": "https://cards.scryfall.io/art_crop/front/b/1/b12e5430-0e80-47dd-80ac-85728b656a24.jpg?1559596837",
+      "border_crop": "https://cards.scryfall.io/border_crop/front/b/1/b12e5430-0e80-47dd-80ac-85728b656a24.jpg?1559596837"
+    },
+    "mana_cost": "",
+    "cmc": 0,
+    "type_line": "Land — Island Mountain",
+    "oracle_text": "({T}: Add {U} or {R}.)",
+    "colors": [],
+    "color_identity": [
+      "R",
+      "U"
+    ],
+    "keywords": [],
+    "produced_mana": [
+      "R",
+      "U"
+    ],
+    "legalities": {
+      "standard": "not_legal",
+      "future": "not_legal",
+      "historic": "not_legal",
+      "gladiator": "not_legal",
+      "pioneer": "not_legal",
+      "explorer": "not_legal",
+      "modern": "not_legal",
+      "legacy": "legal",
+      "pauper": "not_legal",
+      "vintage": "legal",
+      "penny": "not_legal",
+      "commander": "legal",
+      "oathbreaker": "legal",
+      "brawl": "not_legal",
+      "historicbrawl": "not_legal",
+      "alchemy": "not_legal",
+      "paupercommander": "not_legal",
+      "duel": "legal",
+      "oldschool": "legal",
+      "premodern": "not_legal",
+      "predh": "legal"
+    },
+    "games": [
+      "paper"
+    ],
+    "reserved": true,
+    "foil": false,
+    "nonfoil": true,
+    "finishes": [
+      "nonfoil"
+    ],
+    "oversized": false,
+    "promo": false,
+    "reprint": true,
+    "variation": false,
+    "set_id": "45a69797-8adf-468e-a4e1-ba81fd9d66ac",
+    "set": "3ed",
+    "set_name": "Revised Edition",
+    "set_type": "core",
+    "set_uri": "https://api.scryfall.com/sets/45a69797-8adf-468e-a4e1-ba81fd9d66ac",
+    "set_search_uri": "https://api.scryfall.com/cards/search?order=set&q=e%3A3ed&unique=prints",
+    "scryfall_set_uri": "https://scryfall.com/sets/3ed?utm_source=api",
+    "rulings_uri": "https://api.scryfall.com/cards/b12e5430-0e80-47dd-80ac-85728b656a24/rulings",
+    "prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3Ac718911c-c955-4eb9-9e16-be4bd49a4e4e&unique=prints",
+    "collector_number": "291",
+    "digital": false,
+    "rarity": "rare",
+    "card_back_id": "0aeebaf5-8c7d-4636-9e82-8c27447861f7",
+    "artist": "Brian Snõddy",
+    "artist_ids": [
+      "770b4e16-de76-49ed-949f-84e6d2e06d25"
+    ],
+    "illustration_id": "62afbe4c-49e5-4962-bdad-aa1ee6f4e29a",
+    "border_color": "white",
+    "frame": "1993",
+    "full_art": false,
+    "textless": false,
+    "booster": true,
+    "story_spotlight": false,
+    "edhrec_rank": 445,
+    "prices": {
+      "usd": "686.65",
+      "usd_foil": null,
+      "usd_etched": null,
+      "eur": "491.78",
+      "eur_foil": null,
+      "tix": null
+    },
+    "related_uris": {
+      "gatherer": "https://gatherer.wizards.com/Pages/Card/Details.aspx?multiverseid=1385",
+      "tcgplayer_infinite_articles": "https://infinite.tcgplayer.com/search?contentMode=article&game=magic&partner=scryfall&q=Volcanic+Island&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+      "tcgplayer_infinite_decks": "https://infinite.tcgplayer.com/search?contentMode=deck&game=magic&partner=scryfall&q=Volcanic+Island&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+      "edhrec": "https://edhrec.com/route/?cc=Volcanic+Island"
+    },
+    "purchase_uris": {
+      "tcgplayer": "https://www.tcgplayer.com/product/1608?page=1&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+      "cardmarket": "https://www.cardmarket.com/en/Magic/Products/Search?referrer=scryfall&searchString=Volcanic+Island&utm_campaign=card_prices&utm_medium=text&utm_source=scryfall",
+      "cardhoarder": "https://www.cardhoarder.com/cards?affiliate_id=scryfall&data%5Bsearch%5D=Volcanic+Island&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
+    }
+  },
+  {
+    "object": "card",
+    "id": "803fd65f-4ca6-4fe4-abc2-72aa32ebb3a5",
+    "oracle_id": "6ad8011d-3471-4369-9d68-b264cc027487",
+    "multiverse_ids": [
+      1135
+    ],
+    "tcgplayer_id": 1571,
+    "cardmarket_id": 5804,
+    "name": "Sol Ring",
+    "lang": "en",
+    "released_at": "1994-04-01",
+    "uri": "https://api.scryfall.com/cards/803fd65f-4ca6-4fe4-abc2-72aa32ebb3a5",
+    "scryfall_uri": "https://scryfall.com/card/3ed/274/sol-ring?utm_source=api",
+    "layout": "normal",
+    "highres_image": true,
+    "image_status": "highres_scan",
+    "image_uris": {
+      "small": "https://cards.scryfall.io/small/front/8/0/803fd65f-4ca6-4fe4-abc2-72aa32ebb3a5.jpg?1559596727",
+      "normal": "https://cards.scryfall.io/normal/front/8/0/803fd65f-4ca6-4fe4-abc2-72aa32ebb3a5.jpg?1559596727",
+      "large": "https://cards.scryfall.io/large/front/8/0/803fd65f-4ca6-4fe4-abc2-72aa32ebb3a5.jpg?1559596727",
+      "png": "https://cards.scryfall.io/png/front/8/0/803fd65f-4ca6-4fe4-abc2-72aa32ebb3a5.png?1559596727",
+      "art_crop": "https://cards.scryfall.io/art_crop/front/8/0/803fd65f-4ca6-4fe4-abc2-72aa32ebb3a5.jpg?1559596727",
+      "border_crop": "https://cards.scryfall.io/border_crop/front/8/0/803fd65f-4ca6-4fe4-abc2-72aa32ebb3a5.jpg?1559596727"
+    },
+    "mana_cost": "{1}",
+    "cmc": 1,
+    "type_line": "Artifact",
+    "oracle_text": "{T}: Add {C}{C}.",
+    "colors": [],
+    "color_identity": [],
+    "keywords": [],
+    "produced_mana": [
+      "C"
+    ],
+    "legalities": {
+      "standard": "not_legal",
+      "future": "not_legal",
+      "historic": "not_legal",
+      "gladiator": "not_legal",
+      "pioneer": "not_legal",
+      "explorer": "not_legal",
+      "modern": "not_legal",
+      "legacy": "banned",
+      "pauper": "not_legal",
+      "vintage": "restricted",
+      "penny": "not_legal",
+      "commander": "legal",
+      "oathbreaker": "banned",
+      "brawl": "not_legal",
+      "historicbrawl": "not_legal",
+      "alchemy": "not_legal",
+      "paupercommander": "not_legal",
+      "duel": "banned",
+      "oldschool": "restricted",
+      "premodern": "not_legal",
+      "predh": "legal"
+    },
+    "games": [
+      "paper"
+    ],
+    "reserved": false,
+    "foil": false,
+    "nonfoil": true,
+    "finishes": [
+      "nonfoil"
+    ],
+    "oversized": false,
+    "promo": false,
+    "reprint": true,
+    "variation": false,
+    "set_id": "45a69797-8adf-468e-a4e1-ba81fd9d66ac",
+    "set": "3ed",
+    "set_name": "Revised Edition",
+    "set_type": "core",
+    "set_uri": "https://api.scryfall.com/sets/45a69797-8adf-468e-a4e1-ba81fd9d66ac",
+    "set_search_uri": "https://api.scryfall.com/cards/search?order=set&q=e%3A3ed&unique=prints",
+    "scryfall_set_uri": "https://scryfall.com/sets/3ed?utm_source=api",
+    "rulings_uri": "https://api.scryfall.com/cards/803fd65f-4ca6-4fe4-abc2-72aa32ebb3a5/rulings",
+    "prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A6ad8011d-3471-4369-9d68-b264cc027487&unique=prints",
+    "collector_number": "274",
+    "digital": false,
+    "rarity": "uncommon",
+    "card_back_id": "0aeebaf5-8c7d-4636-9e82-8c27447861f7",
+    "artist": "Mark Tedin",
+    "artist_ids": [
+      "9ee9a9cc-c09e-486f-918b-69f80cbc4188"
+    ],
+    "illustration_id": "54462260-8d64-4ec2-bac7-f2d469f187f3",
+    "border_color": "white",
+    "frame": "1993",
+    "full_art": false,
+    "textless": false,
+    "booster": true,
+    "story_spotlight": false,
+    "edhrec_rank": 1,
+    "prices": {
+      "usd": "14.26",
+      "usd_foil": null,
+      "usd_etched": null,
+      "eur": "7.97",
+      "eur_foil": null,
+      "tix": null
+    },
+    "related_uris": {
+      "gatherer": "https://gatherer.wizards.com/Pages/Card/Details.aspx?multiverseid=1135",
+      "tcgplayer_infinite_articles": "https://infinite.tcgplayer.com/search?contentMode=article&game=magic&partner=scryfall&q=Sol+Ring&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+      "tcgplayer_infinite_decks": "https://infinite.tcgplayer.com/search?contentMode=deck&game=magic&partner=scryfall&q=Sol+Ring&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+      "edhrec": "https://edhrec.com/route/?cc=Sol+Ring"
+    },
+    "purchase_uris": {
+      "tcgplayer": "https://www.tcgplayer.com/product/1571?page=1&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+      "cardmarket": "https://www.cardmarket.com/en/Magic/Products/Search?referrer=scryfall&searchString=Sol+Ring&utm_campaign=card_prices&utm_medium=text&utm_source=scryfall",
+      "cardhoarder": "https://www.cardhoarder.com/cards?affiliate_id=scryfall&data%5Bsearch%5D=Sol+Ring&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
+    }
+  },
+  {
+    "object": "card",
+    "id": "939b8bcc-b9ac-4d8c-9db4-2bf91a853f03",
+    "oracle_id": "4d6120d6-fcce-40bc-9fc6-e1f5beb6c728",
+    "multiverse_ids": [],
+    "tcgplayer_id": 198816,
+    "cardmarket_id": 400014,
+    "name": "Embercleave",
+    "lang": "en",
+    "released_at": "2019-10-04",
+    "uri": "https://api.scryfall.com/cards/939b8bcc-b9ac-4d8c-9db4-2bf91a853f03",
+    "scryfall_uri": "https://scryfall.com/card/eld/359/embercleave?utm_source=api",
+    "layout": "normal",
+    "highres_image": true,
+    "image_status": "highres_scan",
+    "image_uris": {
+      "small": "https://cards.scryfall.io/small/front/9/3/939b8bcc-b9ac-4d8c-9db4-2bf91a853f03.jpg?1571537886",
+      "normal": "https://cards.scryfall.io/normal/front/9/3/939b8bcc-b9ac-4d8c-9db4-2bf91a853f03.jpg?1571537886",
+      "large": "https://cards.scryfall.io/large/front/9/3/939b8bcc-b9ac-4d8c-9db4-2bf91a853f03.jpg?1571537886",
+      "png": "https://cards.scryfall.io/png/front/9/3/939b8bcc-b9ac-4d8c-9db4-2bf91a853f03.png?1571537886",
+      "art_crop": "https://cards.scryfall.io/art_crop/front/9/3/939b8bcc-b9ac-4d8c-9db4-2bf91a853f03.jpg?1571537886",
+      "border_crop": "https://cards.scryfall.io/border_crop/front/9/3/939b8bcc-b9ac-4d8c-9db4-2bf91a853f03.jpg?1571537886"
+    },
+    "mana_cost": "{4}{R}{R}",
+    "cmc": 6,
+    "type_line": "Legendary Artifact — Equipment",
+    "oracle_text": "Flash\nThis spell costs {1} less to cast for each attacking creature you control.\nWhen Embercleave enters the battlefield, attach it to target creature you control.\nEquipped creature gets +1/+1 and has double strike and trample.\nEquip {3}",
+    "colors": [
+      "R"
+    ],
+    "color_identity": [
+      "R"
+    ],
+    "keywords": [
+      "Equip",
+      "Flash"
+    ],
+    "legalities": {
+      "standard": "not_legal",
+      "future": "not_legal",
+      "historic": "legal",
+      "gladiator": "legal",
+      "pioneer": "legal",
+      "explorer": "legal",
+      "modern": "legal",
+      "legacy": "legal",
+      "pauper": "not_legal",
+      "vintage": "legal",
+      "penny": "not_legal",
+      "commander": "legal",
+      "oathbreaker": "legal",
+      "brawl": "not_legal",
+      "historicbrawl": "legal",
+      "alchemy": "not_legal",
+      "paupercommander": "not_legal",
+      "duel": "legal",
+      "oldschool": "not_legal",
+      "premodern": "not_legal",
+      "predh": "not_legal"
+    },
+    "games": [
+      "paper",
+      "mtgo"
+    ],
+    "reserved": false,
+    "foil": true,
+    "nonfoil": true,
+    "finishes": [
+      "nonfoil",
+      "foil"
+    ],
+    "oversized": false,
+    "promo": false,
+    "reprint": false,
+    "variation": false,
+    "set_id": "a90a7b2f-9dd8-4fc7-9f7d-8ea2797ec782",
+    "set": "eld",
+    "set_name": "Throne of Eldraine",
+    "set_type": "expansion",
+    "set_uri": "https://api.scryfall.com/sets/a90a7b2f-9dd8-4fc7-9f7d-8ea2797ec782",
+    "set_search_uri": "https://api.scryfall.com/cards/search?order=set&q=e%3Aeld&unique=prints",
+    "scryfall_set_uri": "https://scryfall.com/sets/eld?utm_source=api",
+    "rulings_uri": "https://api.scryfall.com/cards/939b8bcc-b9ac-4d8c-9db4-2bf91a853f03/rulings",
+    "prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A4d6120d6-fcce-40bc-9fc6-e1f5beb6c728&unique=prints",
+    "collector_number": "359",
+    "digital": false,
+    "rarity": "mythic",
+    "card_back_id": "0aeebaf5-8c7d-4636-9e82-8c27447861f7",
+    "artist": "Joe Slucher",
+    "artist_ids": [
+      "13b6c9ee-f7a8-46a4-934f-ea6b4a1b14b2"
+    ],
+    "illustration_id": "58ea4d2d-2f14-4540-8b33-7704608320f8",
+    "border_color": "black",
+    "frame": "2015",
+    "frame_effects": [
+      "legendary",
+      "extendedart"
+    ],
+    "security_stamp": "oval",
+    "full_art": false,
+    "textless": false,
+    "booster": false,
+    "story_spotlight": false,
+    "promo_types": [
+      "boosterfun"
+    ],
+    "edhrec_rank": 1111,
+    "preview": {
+      "source": "Martin Jůza",
+      "source_uri": "https://twitter.com/MartinJuza/status/1171095982068686848",
+      "previewed_at": "2019-09-09"
+    },
+    "prices": {
+      "usd": "13.13",
+      "usd_foil": "64.61",
+      "usd_etched": null,
+      "eur": "16.98",
+      "eur_foil": "46.99",
+      "tix": null
+    },
+    "related_uris": {
+      "tcgplayer_infinite_articles": "https://infinite.tcgplayer.com/search?contentMode=article&game=magic&partner=scryfall&q=Embercleave&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+      "tcgplayer_infinite_decks": "https://infinite.tcgplayer.com/search?contentMode=deck&game=magic&partner=scryfall&q=Embercleave&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+      "edhrec": "https://edhrec.com/route/?cc=Embercleave"
+    },
+    "purchase_uris": {
+      "tcgplayer": "https://www.tcgplayer.com/product/198816?page=1&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+      "cardmarket": "https://www.cardmarket.com/en/Magic/Products/Search?referrer=scryfall&searchString=Embercleave&utm_campaign=card_prices&utm_medium=text&utm_source=scryfall",
+      "cardhoarder": "https://www.cardhoarder.com/cards?affiliate_id=scryfall&data%5Bsearch%5D=Embercleave&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
+    }
+  }
 ];
+export function getCardByName(name: string) {
+  return testCardData.find((card) => card.name === name);
+}
