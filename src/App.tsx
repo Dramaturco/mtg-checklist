@@ -13,10 +13,14 @@ function App() {
 
 
   function handleSetSelect(set: MTGSet): void {
-    console.log("Selected set")
-    console.log(set)
     setSelectedSet(set);
   }
+
+  useEffect(() => {
+    if(selectedSet.name !== ""){
+      console.log("loaded", selectedSet.name)
+    }
+  },[selectedSet])
 
   return (
     <div className="App">
