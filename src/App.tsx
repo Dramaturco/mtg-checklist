@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useCallback } from "react";
-import "./App.css";
 import SetSelector from "./components/SetSelector";
 import ConfigurationContext from "./Context/ConfigurationContext";
 import ConfigurationSelector from "./components/ConfigurationSelector";

@@ -59,7 +59,7 @@ function getCSSColorByType(colortype: string, dark: boolean | undefined) {
     }, [configuration, colorType, dark, background]);
     return (
       <div
-        className={`${background} px-2 py-2 border-black border-b-0 border w-1/3 m-auto h-1/3`}
+        className={`${background} px-2 py-2 border-black border-b-0 border w-full m-auto h-8`}
         data-testid="card"
       >
         <p>{name}</p>
