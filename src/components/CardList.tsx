@@ -3,6 +3,7 @@ import { MTGCard, MTGColorType, MTGSet, MTGCardBlock } from "../@types/MTGSet";
 import ConfigurationContext from "../Context/ConfigurationContext";
 import { ConfigurationContextType } from "../@types/Configuration";
 import Page from "./Page";
+import { v4 as uuidv4 } from 'uuid';
 
 const scryfallApi = "https://api.scryfall.com";
 
@@ -92,7 +93,7 @@ export default function CardList({ set }: CardListProps) {
   return (
     <div className="grid grid-cols-3 w-4/5 m-auto">
       {blocks && blocks.map((block) => (
-        <Page block={block}/>
+        <Page key={uuidv4()} block={block}/>
       ))}
     </div>
   );
