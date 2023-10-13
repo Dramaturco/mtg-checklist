@@ -38,7 +38,7 @@ export default function SetSelector(props: any) {
     props.selectSet(selectedSet)
   }
   return (
-    <div>
+    <div className="mt-8">
       <input
         type="text"
         value={filter}
@@ -61,6 +61,9 @@ export default function SetSelector(props: any) {
           </option>
         ))}
       </datalist>
+      <button
+        onClick={() => selectSet(filter)}
+        className="ml-2 border-black border p-2 rounded-sm text-white bg-teal-500 hover:bg-teal-800">Search</button>
     </div>
   );
 }
