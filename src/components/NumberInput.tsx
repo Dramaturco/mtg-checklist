@@ -1,3 +1,5 @@
+import React from 'react'
+
 const INCREMENT_LABEL = "+";
 const DECREMENT_LABEL = "-";
 

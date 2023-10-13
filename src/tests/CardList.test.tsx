@@ -1,6 +1,4 @@
-import { render, screen, fireEvent } from "@testing-library/react";
-import { MTGCard } from "../@types/MTGSet";
-import CardList, { splitListIntoBlocks, getColorType } from "../components/CardList";
+import { splitListIntoBlocks, getColorType } from "../components/CardList";
 import { testCardData } from "./testData";
 
 
