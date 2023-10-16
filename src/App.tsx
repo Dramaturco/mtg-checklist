@@ -1,9 +1,10 @@
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useState } from "react";
 import SetSelector from "./components/SetSelector";
 import ConfigurationContext from "./Context/ConfigurationContext";
 import ConfigurationSelector from "./components/ConfigurationSelector";
-import { MTGSet, MTGCard } from "./@types/MTGSet";
+import { MTGSet } from "./@types/MTGSet";
 import CardList from "./components/CardList";
+import ErrorBoundary from "./components/ErrorBoundary";
 
 
 
@@ -16,15 +17,10 @@ function App() {
     setSelectedSet(set);
   }
 
-  useEffect(() => {
-    if(selectedSet.name !== ""){
-      console.log("loaded", selectedSet.name)
-    }
-  },[selectedSet])
-
   return (
     <div className="App">
       <ConfigurationContext.Provider value={{configuration, setConfiguration}}>
+        <ErrorBoundary>
           <SetSelector
             selectSet={handleSetSelect}
           />
@@ -32,9 +28,10 @@ function App() {
         <ConfigurationSelector />
         </div>
         {
-          selectedSet.name !== "" && 
+          selectedSet && selectedSet.name !== "" && 
           <CardList set={selectedSet}/>
         }
+        </ErrorBoundary>
       </ConfigurationContext.Provider>
     </div>
   );

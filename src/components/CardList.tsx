@@ -69,7 +69,6 @@ export default function CardList({ set }: CardListProps) {
   }
 
   async function fetchCardsForSelectedSet() {
-    console.log("fetching set", set.name)
     const url = scryfallApi + "/sets/" + set.code;
     const res = await fetch(url);
     const setData = await res.json();
