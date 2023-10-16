@@ -1,5 +1,5 @@
 import { useEffect, useState, useContext } from "react";
-import { MTGCard, MTGColorType, MTGSet, MTGCardBlock } from "../@types/MTGSet";
+import { MTGCard, MTGColorType, MTGSet, MTGCardBlock, supertypes, MTGRawCard } from "../@types/MTGSet";
 import ConfigurationContext from "../Context/ConfigurationContext";
 import { ConfigurationContextType } from "../@types/Configuration";
 import Page from "./Page";
@@ -10,6 +10,11 @@ const scryfallApi = "https://api.scryfall.com";
 type CardListProps = {
   set: MTGSet;
 };
+export function extractSuperType(typeLine: string): string {
+  const types = typeLine.split(" ");
+  const superType = types.find((type) => supertypes.includes(type));
+  return superType ? superType : "";
+}
 export function splitListIntoBlocks(
   cards: MTGCard[],
   blocksize: number
@@ -60,7 +65,7 @@ export default function CardList({ set }: CardListProps) {
     ConfigurationContext
   ) as ConfigurationContextType;
 
-  async function fetchCards(url: string): Promise<MTGCard[]> {
+  async function fetchCards(url: string): Promise<MTGRawCard[]> {
     const cardsUrl = new URL(url);
     cardsUrl.searchParams.set("include_variations", "false");
     let res = await fetch(cardsUrl);
@@ -87,13 +92,15 @@ export default function CardList({ set }: CardListProps) {
       const cardsWithColorType = cards.map((card) => ({
         ...card,
         colorType: getColorType(card),
+        link: card.scryfall_uri,
+        type: extractSuperType(card.type_line),
       }));
 
       setCards(cardsWithColorType);
     }
     fetchCardsForSelectedSet();
   }, [set]);
-  
+
   useEffect(() => {
     if (cards) {
       const blocks = splitListIntoBlocks(cards, configuration.slotsPerPage);

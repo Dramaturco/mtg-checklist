@@ -8,7 +8,7 @@ function Page({ block }: PageProps) {
   return (
     <div className='border border-black flex flex-row flex-wrap justify-center border-b-0'
     >{block.cards.map((card, index) => (
-      <Card name={card.name} key={card.id} colorType={card.colorType} dark={index%2===0}/>
+      <Card card={card} key={card.id} dark={index%2===0}/>
     ))}</div>
   )
 }

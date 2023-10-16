@@ -3,6 +3,8 @@ export interface Configuration {
   cardCondition: boolean;
   language?: string;
   showColors?: boolean;
+  showLinks?: boolean;
+  showTypes?: boolean;
 }
 export type ConfigurationContextType = {
   configuration: Configuration;
