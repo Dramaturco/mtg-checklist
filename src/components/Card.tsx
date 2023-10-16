@@ -52,15 +52,23 @@ function getCSSColorByType(colortype: string, dark: boolean | undefined) {
   }
   return { cssColor, textColor };
 }
-function getCardType(card: MTGCard): string {
-  return "";
-}
+
 export default function Card({ card, dark }: CardProps) {
   const [background, setBackground] = useState("");
   const [textColor, setTextColor] = useState("text-black");
+  const [cardName, setCardName] = useState("");
   const { configuration } = useContext(
     ConfigurationContext
   ) as ConfigurationContextType;
+
+  useEffect(() => {
+    if(configuration.showTypes) {
+      setCardName(`${card.name} - ${card.type}`);
+    }
+    else {
+      setCardName(card.name);
+    }
+  },[configuration.showTypes, card.name, card.type]);
 
   useEffect(() => {
     if (configuration.showColors) {
@@ -88,10 +96,10 @@ export default function Card({ card, dark }: CardProps) {
           rel="noreferrer"
           className="hover:font-bold cursor-pointer"
         >
-          <p className={`${textColor} leading-4`}>{card.name}</p>
+          <p className={`${textColor} leading-4`}>{cardName}</p>
         </a>
       ) : (
-        <p className={`${textColor} leading-4`}>{card.name}</p>
+        <p className={`${textColor} leading-4`}>{cardName}</p>
       )}
     </div>
   );

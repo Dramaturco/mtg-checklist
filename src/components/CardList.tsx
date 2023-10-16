@@ -11,8 +11,9 @@ type CardListProps = {
   set: MTGSet;
 };
 export function extractSuperType(typeLine: string): string {
+  console.log(typeLine);
   const types = typeLine.split(" ");
-  const superType = types.find((type) => supertypes.includes(type));
+  const superType = types.find((type) => supertypes.includes(type.toLowerCase()));
   return superType ? superType : "";
 }
 export function splitListIntoBlocks(

@@ -19,11 +19,16 @@ export default function ConfigurationSelector() {
     setConfiguration({...configuration, showLinks: newValue})
   }
 
+  function handleTypes(newValue: boolean) {
+    setConfiguration({...configuration, showTypes: newValue})
+  }
+
   return (
     <div className="flex flex-row print:hidden">
       <NumberInput min={4} max={9} handler={handleSlots} step={1} value={configuration.slotsPerPage} label="Slots per binder page"/>
       <ConfigurationToggle label="Show colors" handle={handleColors} checked={!!configuration.showColors}/>
       <ConfigurationToggle label="Show Links" handle={handleLinks} checked={!!configuration.showLinks}/>
+      <ConfigurationToggle label="Show Supertypes" handle={handleTypes} checked={!!configuration.showTypes}/>
     </div>
   );
 }

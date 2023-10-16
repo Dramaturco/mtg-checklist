@@ -6,12 +6,12 @@ import { MTGSet } from "./@types/MTGSet";
 import CardList from "./components/CardList";
 import ErrorBoundary from "./components/ErrorBoundary";
 
-
-
 function App() {
-  const [selectedSet, setSelectedSet] = useState({name: "", code: ""});
-  const [configuration, setConfiguration] = useState({slotsPerPage: 9, cardCondition: false})
-
+  const [selectedSet, setSelectedSet] = useState({ name: "", code: "" });
+  const [configuration, setConfiguration] = useState({
+    slotsPerPage: 9,
+    cardCondition: false,
+  });
 
   function handleSetSelect(set: MTGSet): void {
     setSelectedSet(set);
@@ -19,18 +19,19 @@ function App() {
 
   return (
     <div className="App">
-      <ConfigurationContext.Provider value={{configuration, setConfiguration}}>
+      <ConfigurationContext.Provider
+        value={{ configuration, setConfiguration }}
+      >
         <ErrorBoundary>
-          <SetSelector
-            selectSet={handleSetSelect}
-          />
-        <div className="container mx-auto flex justify-center">
-        <ConfigurationSelector />
-        </div>
-        {
-          selectedSet && selectedSet.name !== "" && 
-          <CardList set={selectedSet}/>
-        }
+          <SetSelector selectSet={handleSetSelect} />
+          <div className="container mx-auto flex justify-center">
+            {selectedSet && selectedSet.name !== "" && (
+              <ConfigurationSelector />
+            )}
+          </div>
+          {selectedSet && selectedSet.name !== "" && (
+            <CardList set={selectedSet} />
+          )}
         </ErrorBoundary>
       </ConfigurationContext.Provider>
     </div>
