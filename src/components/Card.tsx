@@ -11,58 +11,74 @@ type CardProps = {
 //doing this the really dumb way because tailwind wants full class names somewhere in the code
 function getCSSColorByType(colortype: string, dark: boolean | undefined) {
   let cssColor = "";
+  let textColor = "";
     switch (colortype) {
       case "Red":
-        cssColor += dark ? "bg-red-500" : "bg-red-200";
+        cssColor = dark ? "bg-red-700" : "bg-red-200";
+        textColor = dark ? "text-white" : "text-black";
         break;
       case "Blue":
-        cssColor += dark ? "bg-blue-500" : "bg-blue-200";
+        cssColor = dark ? "bg-blue-700" : "bg-blue-200";
+        textColor = dark ? "text-white" : "text-black";
         break;
       case "Green":
-        cssColor += dark ? "bg-green-500" : "bg-green-200";
+        cssColor = dark ? "bg-green-700" : "bg-green-200";
+        textColor = dark ? "text-white" : "text-black";
         break;
       case "Black":
-        cssColor += dark ? "bg-black-500" : "bg-black-200";
+        cssColor = dark ? "bg-mtgBlack-500" : "bg-mtgBlack-200";
+        textColor = "text-white"
         break;
       case "White":
-        cssColor += dark ? "bg-cream-500" : "bg-cream-200";
+        cssColor = dark ? "bg-cream-500" : "bg-cream-200";
+        textColor = "text-black"
         break;
       case "Artifact":
-        cssColor += dark ? "bg-brown-500" : "bg-brown-200";
+        cssColor = dark ? "bg-brown-700" : "bg-brown-300";
+        textColor = "text-white";
         break;
       case "Land":
-        cssColor += dark ? "bg-land-500" : "bg-land-200";
+        cssColor = dark ? "bg-land-700" : "bg-land-300";
+        textColor = "text-white"
         break;
       case "Multicolor":
-        cssColor += dark ? "bg-gold-500" : "bg-gold-200";
+        cssColor = dark ? "bg-gold-600" : "bg-gold-300";
+        textColor = dark ? "text-white" : "text-black";
         break;
       default:
-        cssColor += "bg-white";
+        cssColor = "bg-white";
+        textColor = "text-black";
         break;
     }
-    return cssColor;
+    return {cssColor, textColor};
   }
   export default function Card({ name, colorType, dark }: CardProps) {
-    const [background, setBackground] = useState("bg-white");
+    const [background, setBackground] = useState("");
+    const [textColor, setTextColor] = useState("text-black");
     const { configuration } = useContext(
       ConfigurationContext
     ) as ConfigurationContextType;
 
     useEffect(() => {
       if (configuration.showColors) {
-        const cssColor = getCSSColorByType(colorType, dark);
-        setBackground(cssColor);
+        const colors = getCSSColorByType(colorType, dark);
+        setBackground(colors.cssColor);
+        setTextColor(colors.textColor);
       }
       return () => {
-        setBackground("bg-white");
+        if(dark){
+          setBackground("bg-grey-100")
+        } else {
+          setBackground("bg-white");
+        }
       };
     }, [configuration, colorType, dark, background]);
     return (
       <div
-        className={`${background} px-2 py-2 border-black border-b-0 border w-full m-auto h-8`}
+        className={`${background} px-2 py-2 border-black border-b w-full m-auto h-8`}
         data-testid="card"
       >
-        <p>{name}</p>
+        <p className={`${textColor} leading-4`}>{name}</p>
       </div>
     );
   }

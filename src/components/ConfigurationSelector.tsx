@@ -15,7 +15,7 @@ export default function ConfigurationSelector() {
   }
 
   return (
-    <div className="flex flex-row">
+    <div className="flex flex-row print:hidden">
       <NumberInput min={4} max={9} handler={handleSlots} step={1} value={configuration.slotsPerPage} label="Slots per binder page"/>
       <div className="flex items-center pl-4">
         <input type="checkbox" className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 focus:ring-2" checked={configuration.showColors} onChange={(e) => handleColors(e.target.checked)} />

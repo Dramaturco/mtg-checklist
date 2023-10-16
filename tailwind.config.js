@@ -7,8 +7,26 @@ module.exports = {
         print: { raw: "print" },
         screen: { raw: "screen" },
       },
+      width: {
+        a4: "210mm",
+      },
+      height: {
+        a4: "297mm",
+      },
       colors: {
-        black: {
+        gold: {
+          50: "#f9f8f1",
+          100: "#f2f1e2",
+          200: "#e5e4c5",
+          300: "#d8d6a9",
+          400: "#cbc98c",
+          500: "#bebb6f",
+          600: "#989659",
+          700: "#727043",
+          800: "#4c4b2c",
+          900: "#262516",
+        },
+        mtgBlack: {
           50: "#ebebeb",
           100: "#d8d8d8",
           200: "#b0b0b0",

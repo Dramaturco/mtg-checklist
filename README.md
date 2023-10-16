@@ -9,10 +9,7 @@ Cards are fetched from scryfall.
 
 ## Planned features
 
-* Print the list of cards from the selected set in a grid of x cards per block.
-X is a selectable number and represents the number of slots your binder page has.
-That way you can see which slot each card goes into.
-Add or remove data fields like casting cost, artist, etc. to your grid.
+* Add or remove data fields like casting cost, artist, etc. to your grid.
 * Choose a condition for each card before printing.
 * Choose the language for the card names.
 
@@ -21,6 +18,9 @@ Add or remove data fields like casting cost, artist, etc. to your grid.
 * Fetch the list of sets from scryfall and fill the dropdown menu with it.
 * Display the cards from the set in a list
 * Added a Configuration Context provider and a number input component. This allows you to select the amount of slots your binder page has. This will be used in the upcoming layout to generate blocks of cards that correspond to your binder page.
+* Print the list of cards from the selected set in a grid of x cards per block.
+X is a selectable number and represents the number of slots your binder page has.
+That way you can see which slot each card goes into.
 
 ## Available Scripts
 

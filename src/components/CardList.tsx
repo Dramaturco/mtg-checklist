@@ -90,7 +90,7 @@ export default function CardList({ set }: CardListProps) {
   }, [cards, configuration.slotsPerPage])
 
   return (
-    <div className="grid grid-cols-3 w-4/5 m-auto">
+    <div className="grid lg:grid-cols-3 md:grid-cols-2 w-4/5 m-auto gap-1 sm:grid-cols-1 print:grid-cols-3 print:w-a4 print:h-a4 print:gap-4 print:m-4">
       {blocks && blocks.map((block) => (
         <Page key={uuidv4()} block={block}/>
       ))}

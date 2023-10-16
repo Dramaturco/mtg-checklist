@@ -38,7 +38,7 @@ export default function SetSelector(props: any) {
     props.selectSet(selectedSet)
   }
   return (
-    <div className="mt-8 w-1/2 mx-auto text-center">
+    <div className="mt-8 lg:w-1/2 mx-auto text-center print:hidden">
       <input
         type="text"
         value={filter}
