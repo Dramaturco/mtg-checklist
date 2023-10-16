@@ -3,52 +3,62 @@ import { MTGCard, MTGColorType, MTGSet, MTGCardBlock } from "../@types/MTGSet";
 import ConfigurationContext from "../Context/ConfigurationContext";
 import { ConfigurationContextType } from "../@types/Configuration";
 import Page from "./Page";
-import { v4 as uuidv4 } from 'uuid';
+import { v4 as uuidv4 } from "uuid";
 
 const scryfallApi = "https://api.scryfall.com";
 
 type CardListProps = {
-  set: MTGSet
+  set: MTGSet;
 };
-export function splitListIntoBlocks(cards: MTGCard[], blocksize: number): MTGCardBlock[]{
+export function splitListIntoBlocks(
+  cards: MTGCard[],
+  blocksize: number
+): MTGCardBlock[] {
   return cards.reduce((splitList, card, index) => {
-    const chunkIndex = Math.floor(index/blocksize)
+    const chunkIndex = Math.floor(index / blocksize);
 
-    if(!splitList[chunkIndex]) {
-      splitList[chunkIndex] = {colorTypes: [], cards: []}
+    if (!splitList[chunkIndex]) {
+      splitList[chunkIndex] = { colorTypes: [], cards: [] };
     }
 
-    splitList[chunkIndex].cards.push(card)
+    splitList[chunkIndex].cards.push(card);
 
-    return splitList
-  }, [] as MTGCardBlock[])
+    return splitList;
+  }, [] as MTGCardBlock[]);
 }
 export function getColorType(rawCard: any): MTGColorType {
   function checkTypeLine(typeLine: string): string | undefined {
-    const types = ["Artifact", "Land"]
-    return types.find(type => typeLine.includes(type))
+    const types = ["Artifact", "Land"];
+    return types.find((type) => typeLine.includes(type));
   }
 
-  if(rawCard.colors.length > 1){
-    return "Multicolor"
+  if (rawCard.colors.length > 1) {
+    return "Multicolor";
   }
-  switch(rawCard.colors[0]){
-    case "R": return "Red"
-    case "W": return "White"
-    case "U": return "Blue"
-    case "B": return "Black"
-    case "G": return "Green"
+  switch (rawCard.colors[0]) {
+    case "R":
+      return "Red";
+    case "W":
+      return "White";
+    case "U":
+      return "Blue";
+    case "B":
+      return "Black";
+    case "G":
+      return "Green";
   }
-  const typeLine = checkTypeLine(rawCard.type_line)
-  if(typeLine){
-    return typeLine as MTGColorType
+  const typeLine = checkTypeLine(rawCard.type_line);
+  if (typeLine) {
+    return typeLine as MTGColorType;
   }
-  return "Red"
+  return "Red";
 }
 export default function CardList({ set }: CardListProps) {
-  const [cards, setCards] = useState<MTGCard[]|null>(null)
-  const [blocks, setBlocks] = useState<MTGCardBlock[]|null>(null)
-  const {configuration} = useContext(ConfigurationContext) as ConfigurationContextType;
+  const [cards, setCards] = useState<MTGCard[] | null>(null);
+  const [blocks, setBlocks] = useState<MTGCardBlock[] | null>(null);
+  const { configuration } = useContext(
+    ConfigurationContext
+  ) as ConfigurationContextType;
 
   async function fetchCards(url: string): Promise<MTGCard[]> {
     const cardsUrl = new URL(url);
@@ -68,31 +78,32 @@ export default function CardList({ set }: CardListProps) {
     return cards;
   }
 
-  async function fetchCardsForSelectedSet() {
-    const url = scryfallApi + "/sets/" + set.code;
-    const res = await fetch(url);
-    const setData = await res.json();
-    const cards = await fetchCards(setData.search_uri);
-    const cardsWithColorType = cards.map(card => ({...card, colorType: getColorType(card)}));
-
-    setCards(cardsWithColorType);
-  }
-
   useEffect(() => {
-    fetchCardsForSelectedSet()
-  },[set])
-  useEffect(() => {
-    if(cards){
-      const blocks = splitListIntoBlocks(cards, configuration.slotsPerPage)
-      setBlocks(blocks)
+    async function fetchCardsForSelectedSet() {
+      const url = scryfallApi + "/sets/" + set.code;
+      const res = await fetch(url);
+      const setData = await res.json();
+      const cards = await fetchCards(setData.search_uri);
+      const cardsWithColorType = cards.map((card) => ({
+        ...card,
+        colorType: getColorType(card),
+      }));
+
+      setCards(cardsWithColorType);
     }
-  }, [cards, configuration.slotsPerPage])
+    fetchCardsForSelectedSet();
+  }, [set]);
+  
+  useEffect(() => {
+    if (cards) {
+      const blocks = splitListIntoBlocks(cards, configuration.slotsPerPage);
+      setBlocks(blocks);
+    }
+  }, [cards, configuration.slotsPerPage]);
 
   return (
     <div className="grid lg:grid-cols-3 md:grid-cols-2 w-4/5 m-auto gap-1 sm:grid-cols-1 print:grid-cols-3 print:w-a4 print:h-a4 print:gap-4 print:m-4">
-      {blocks && blocks.map((block) => (
-        <Page key={uuidv4()} block={block}/>
-      ))}
+      {blocks && blocks.map((block) => <Page key={uuidv4()} block={block} />)}
     </div>
   );
 }

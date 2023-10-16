@@ -24,7 +24,7 @@ export default function SetSelector(props: any) {
     if(!allSets){
       fetchSets()
     }
-  }, [])
+  }, [allSets])
   const filterChangeFunction = (value: string) => {
     setFilter(value);
     if(allSets){
