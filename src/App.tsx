@@ -31,15 +31,8 @@ function App() {
               <ConfigurationSelector />
             )}
           </div>
-          {configuration.printView ? (
-            <PrintPage>
-              {selectedSet && selectedSet.name !== "" && (
-                <CardList set={selectedSet} />
-              )}
-            </PrintPage>
-          ) : (
-            selectedSet &&
-            selectedSet.name !== "" && <CardList set={selectedSet} />
+          {selectedSet && selectedSet.name !== "" && (
+            <CardList set={selectedSet} />
           )}
         </ErrorBoundary>
       </ConfigurationContext.Provider>

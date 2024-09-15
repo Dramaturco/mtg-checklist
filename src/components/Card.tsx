@@ -62,13 +62,12 @@ export default function Card({ card, dark }: CardProps) {
   ) as ConfigurationContextType;
 
   useEffect(() => {
-    if(configuration.showTypes) {
+    if (configuration.showTypes) {
       setCardName(`${card.name} - ${card.type}`);
-    }
-    else {
+    } else {
       setCardName(card.name);
     }
-  },[configuration.showTypes, card.name, card.type]);
+  }, [configuration.showTypes, card.name, card.type]);
 
   useEffect(() => {
     if (configuration.showColors) {
@@ -84,9 +83,12 @@ export default function Card({ card, dark }: CardProps) {
       }
     };
   }, [configuration, card.colorType, dark, background]);
+
+  const regularView = `${background} px-2 py-2 border-black border-b w-full m-auto h-8`;
+  const printView = `${background} px-2 py-2 border-black border-b w-full m-auto h-8 text-sm`;
   return (
     <div
-      className={`${background} px-2 py-2 border-black border-b w-full m-auto h-8`}
+      className={configuration.printView ? printView : regularView}
       data-testid="card"
     >
       {configuration.showLinks ? (

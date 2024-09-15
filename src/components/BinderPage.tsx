@@ -1,7 +1,7 @@
 import React from "react";
 import { MTGCardBlock } from "../@types/MTGSet";
 import Card from "./Card";
-type PageProps = {
+export type PageProps = {
   block: MTGCardBlock;
 };
 function BinderPage({ block }: PageProps) {
