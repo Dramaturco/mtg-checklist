@@ -10,7 +10,7 @@ interface PrintPageProps {
 }
 function PrintPage(props: PropsWithChildren<PrintPageProps>) {
   return (
-    <div className="container printpage relative">
+    <div className="printpage relative px-[1cm] py-[2cm]">
       {props.headerProps && (
         <PrintHeader
           pageNumber={props.headerProps.pageNumber}

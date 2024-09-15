@@ -28,6 +28,7 @@ export const A4_HEIGHT_CM = 29.7;
 export const A4_WIDTH_CM = 21;
 export const HEIGHT_MARGINS = 4;
 export const WIDTH_MARGINS = 1;
+export const NUM_COLUMNS = 3;
 
 export function extractSuperType(typeLine: string): string {
   const types = typeLine.split(" ");
@@ -79,7 +80,9 @@ export function calculateBlocksPerPrintPage(cardsPerBlock: number) {
   const blockheight = cardsPerBlock * cardHeightInCm;
   console.log(cardHeightInCm);
   console.log(blockheight);
-  return Math.floor((A4_HEIGHT_CM - HEIGHT_MARGINS) / blockheight) * 3;
+  return (
+    Math.floor((A4_HEIGHT_CM - HEIGHT_MARGINS) / blockheight) * NUM_COLUMNS
+  );
 }
 export function getColorType(rawCard: any): MTGColorType {
   function checkTypeLine(typeLine: string): string | undefined {
@@ -178,22 +181,23 @@ export default function CardList({ set }: CardListProps) {
       <PrintPage
         blocks={blockChunk.blocks}
         headerProps={{
-          pageNumber: index,
-          totalPages: printBlockChunks.length + 1,
+          pageNumber: index + 1,
+          totalPages: printBlockChunks.length,
         }}
+        key={uuidv4()}
       />
     ));
+  const renderBinderPages = () =>
+    blocks &&
+    blocks.map((block) => <BinderPage key={uuidv4()} block={block} />);
 
-  const regularGrid =
+  const regularView =
     "grid lg:grid-cols-3 md:grid-cols-2 w-4/5 m-auto gap-1 sm:grid-cols-1 print:grid-cols-3 print:w-a4 print:h-a4 print:gap-4 print:m-4";
 
-  const printGrid = "grid grid-cols-1";
+  const printView = "w-[21cm] m-auto";
   return (
-    <div className={configuration.printView ? printGrid : regularGrid}>
-      {blocks &&
-        (configuration.printView
-          ? renderPrintPages()
-          : blocks.map((block) => <BinderPage key={uuidv4()} block={block} />))}
+    <div className={configuration.printView ? printView : regularView}>
+      {configuration.printView ? renderPrintPages() : renderBinderPages()}
     </div>
   );
 }
