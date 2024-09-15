@@ -5,6 +5,7 @@ export interface Configuration {
   showColors?: boolean;
   showLinks?: boolean;
   showTypes?: boolean;
+  printView: boolean;
 }
 export type ConfigurationContextType = {
   configuration: Configuration;

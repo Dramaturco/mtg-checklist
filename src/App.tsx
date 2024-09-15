@@ -5,12 +5,14 @@ import ConfigurationSelector from "./components/ConfigurationSelector";
 import { MTGSet } from "./@types/MTGSet";
 import CardList from "./components/CardList";
 import ErrorBoundary from "./components/ErrorBoundary";
+import PrintPage from "./components/PrintView/PrintPage";
 
 function App() {
   const [selectedSet, setSelectedSet] = useState({ name: "", code: "" });
   const [configuration, setConfiguration] = useState({
     slotsPerPage: 9,
     cardCondition: false,
+    printView: false,
   });
 
   function handleSetSelect(set: MTGSet): void {
@@ -29,8 +31,15 @@ function App() {
               <ConfigurationSelector />
             )}
           </div>
-          {selectedSet && selectedSet.name !== "" && (
-            <CardList set={selectedSet} />
+          {configuration.printView ? (
+            <PrintPage>
+              {selectedSet && selectedSet.name !== "" && (
+                <CardList set={selectedSet} />
+              )}
+            </PrintPage>
+          ) : (
+            selectedSet &&
+            selectedSet.name !== "" && <CardList set={selectedSet} />
           )}
         </ErrorBoundary>
       </ConfigurationContext.Provider>

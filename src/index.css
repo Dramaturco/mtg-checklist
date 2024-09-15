@@ -2,3 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+.printpage {
+  width: 21cm;
+  height: 29.7cm;
+  border: 2px solid red;
+  margin: auto;
+  padding: 1rem;
+}

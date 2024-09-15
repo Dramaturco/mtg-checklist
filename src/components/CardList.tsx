@@ -1,8 +1,15 @@
 import { useEffect, useState, useContext } from "react";
-import { MTGCard, MTGColorType, MTGSet, MTGCardBlock, supertypes, MTGRawCard } from "../@types/MTGSet";
+import {
+  MTGCard,
+  MTGColorType,
+  MTGSet,
+  MTGCardBlock,
+  supertypes,
+  MTGRawCard,
+} from "../@types/MTGSet";
 import ConfigurationContext from "../Context/ConfigurationContext";
 import { ConfigurationContextType } from "../@types/Configuration";
-import Page from "./Page";
+import BinderPage from "./BinderPage";
 import { v4 as uuidv4 } from "uuid";
 
 const scryfallApi = "https://api.scryfall.com";
@@ -13,7 +20,9 @@ type CardListProps = {
 export function extractSuperType(typeLine: string): string {
   console.log(typeLine);
   const types = typeLine.split(" ");
-  const superType = types.find((type) => supertypes.includes(type.toLowerCase()));
+  const superType = types.find((type) =>
+    supertypes.includes(type.toLowerCase())
+  );
   return superType ? superType : "";
 }
 export function splitListIntoBlocks(
@@ -111,7 +120,8 @@ export default function CardList({ set }: CardListProps) {
 
   return (
     <div className="grid lg:grid-cols-3 md:grid-cols-2 w-4/5 m-auto gap-1 sm:grid-cols-1 print:grid-cols-3 print:w-a4 print:h-a4 print:gap-4 print:m-4">
-      {blocks && blocks.map((block) => <Page key={uuidv4()} block={block} />)}
+      {blocks &&
+        blocks.map((block) => <BinderPage key={uuidv4()} block={block} />)}
     </div>
   );
 }
