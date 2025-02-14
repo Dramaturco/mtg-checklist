@@ -21,7 +21,7 @@ jobs:
         uses: burnett01/rsync-deployments@6.0.0
         with:
           switches: -avrh --delete
-          path: dist/
+          path: build/
           remote_path: /var/www/virtual/${{ vars.SSH_USERNAME }}/html/mtg-checklist
           remote_host: ${{ vars.SSH_HOST }}
           remote_user: ${{ vars.SSH_USERNAME }}

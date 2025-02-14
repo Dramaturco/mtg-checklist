@@ -173,7 +173,12 @@ export default function CardList({ set }: CardListProps) {
       }
       setBlocks(blocks);
     }
-  }, [cards, configuration.slotsPerPage, configuration.printView]);
+  }, [
+    cards,
+    configuration.slotsPerPage,
+    configuration.printView,
+    blocksPerPrintPage,
+  ]);
 
   const renderPrintPages = () =>
     printBlockChunks &&

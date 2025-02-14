@@ -5,7 +5,6 @@ import ConfigurationSelector from "./components/ConfigurationSelector";
 import { MTGSet } from "./@types/MTGSet";
 import CardList from "./components/CardList";
 import ErrorBoundary from "./components/ErrorBoundary";
-import PrintPage from "./components/PrintView/PrintPage";
 
 function App() {
   const [selectedSet, setSelectedSet] = useState({ name: "", code: "" });
